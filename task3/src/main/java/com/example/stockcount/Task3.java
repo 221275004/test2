@@ -71,7 +71,7 @@ public class Task3 {
             Collections.sort(entryList, new Comparator<Map.Entry<Text, LongWritable>>() {
                 @Override
                 public int compare(Map.Entry<Text, LongWritable> o1, Map.Entry<Text, LongWritable> o2) {
-                    return Long.compare(o2.getValue().get(), o1.getValue().get()); // 降序
+                    return Long.compare(o2.getValue().get(), o1.getValue().get()); 
                 }
             });
 
@@ -93,8 +93,8 @@ public class Task3 {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
 
-        FileInputFormat.addInputPath(job, new Path(args[0])); // 输入路径
-        FileOutputFormat.setOutputPath(job, new Path(args[1])); // 输出路径
+        FileInputFormat.addInputPath(job, new Path(args[0])); 
+        FileOutputFormat.setOutputPath(job, new Path(args[1])); 
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
